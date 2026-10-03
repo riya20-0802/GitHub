@@ -1,33 +1,42 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
-
-
-# The game starts here.
+﻿define s = Character("Snoopy", color="#ff9900")
 
 label start:
+    scene bg room:
+        size (1920, 1080)
+    with dissolve
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    show snoopy happy:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.75
 
-    scene bg room
+    s "Hello, and welcome to my fall-themed game!"
+    s "Do you want to go outside, or stay in here with me?"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    menu:
+        "Go outside into the leaves.":
+            jump outside
 
-    show eileen happy
+        "Stay in this cozy room.":
+            jump stay
 
-    # These display lines of dialogue.
+label outside:
+    scene bg whitehouse with dissolve
+    show snoopy happy:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.75
 
-    e "You've created a new Ren'Py game."
+    s "Wow, look at all the autumn leaves! It's beautiful out here."
+    return
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+label stay:
+    scene bg room:
+        size (1920, 1080)
+    show snoopy happy:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.75
 
-    # This ends the game.
-
+    s "Much better. It's so warm and cozy inside."
     return

@@ -150,8 +150,8 @@ label bake_pie:
     
     # This slides the pie nicely onto the kitchen table on the left!
     show pumpkin_pie:
-        xalign 0.22
-        yalign 0.68
+        xalign 0.20
+        yalign 0.72
         zoom 0.4
     with dissolve
 

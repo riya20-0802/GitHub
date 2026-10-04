@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("My Story Game")
+define config.name = _("Snoopy's Autumn Adventure")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -207,3 +207,8 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
+
+# --- NEW CUSTOM CODE ---
+# This forces my custom main menu background image to stretch full screen
+define gui.main_menu_background = Transform("gui/main_menu.png", size=(1920, 1080))
+

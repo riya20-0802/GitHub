@@ -23,8 +23,8 @@ transform woodstock_hover:
     repeat
 
 # --- CHARACTER DEFINITIONS ---
-define s = Character("Snoopy", color="#ff9900")
-define w = Character("Woodstock", color="#ffff00")
+define s = Character("Snoopy", color="#b06900")
+define w = Character("Woodstock", color="#5C4033")
 
 # --- THE STORY ---
 label start:
@@ -151,7 +151,7 @@ label bake_pie:
     # This slides the pie nicely onto the kitchen table on the left!
     show pumpkin_pie:
         xalign 0.20
-        yalign 0.72
+        yalign 0.55
         zoom 0.4
     with dissolve
 

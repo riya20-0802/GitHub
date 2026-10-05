@@ -160,23 +160,80 @@ label bake_pie:
     jump game_ending
 
 label take_nap:
-    scene bg room:
+    hide snoopy
+    hide woodstock
+    with dissolve
+
+    scene bg nap_time:
         size (1920, 1080)
     with dissolve
     
-    show snoopy happy at snoopy_idle:
-        zoom 1.5
-    show woodstock happy at woodstock_hover:
-        zoom 0.5
-
     s "Zzz... the sound of the autumn wind outside is perfect sleeping music... Zzz..."
     w "Zzz..."
+
+    "Snoopy and Woodstock drifted off into a deep, peaceful sleep under their warm flannel blankets."
+    "As the fire crackled in the other room, they began to share a lovely autumn dream..."
+
+    menu:
+        "Dream about being the Flying Ace soaring through the sky!":
+            jump branch_dream_ace
+
+        "Dream about a mountain of chocolate chip cookies!":
+            jump branch_dream_cookies
+
+
+label branch_dream_ace:
+    show thought_bubble:
+        xalign 0.30
+        yalign 0.10
+        zoom 2.0
+    with dissolve
+
+    # Forces the Flying Ace to anchor from his true center and sit in the cloud
+    show dream_ace:
+        xalign 0.34
+        yalign 0.22
+        yanchor 0.5
+        zoom 0.4
+    with dissolve
+
+    "Snoopy imagined himself flying high above the orange and red trees, protecting the skies!"
     
+    hide thought_bubble
+    hide dream_ace
+    with dissolve
     jump game_ending
+
+
+label branch_dream_cookies:
+    show thought_bubble:
+        xalign 0.30
+        yalign 0.10
+        zoom 1.7
+    with dissolve
+
+    # Forces the cookie mountain to anchor from its true center and sit in the cloud
+    show dream_cookies:
+        xalign 0.35    # Adjusted slightly to center inside the cloud
+        yalign 0.23    # Adjusted slightly to lift into the cloud bubble
+        xanchor 0.5
+        yanchor 0.5
+        zoom 0.26      # Reduced scale from 0.5 to 0.22 to fit properly
+    with dissolve
+
+    "In their sleepy minds, a massive mountain of fresh-baked chocolate chip cookies floated by!"
+    
+    hide thought_bubble
+    hide dream_cookies
+    with dissolve
+    jump game_ending
+
+
+
 
 # --- CUSTOM FINAL THANK YOU OUTRO PAGE ---
 label game_ending:
-    # Fades out previous items and leaves a clean, elegant final room display
+    # Fades out previous items and leaves a clean, elegant final room display (back to the original room)
     scene bg room:
         size (1920, 1080)
     with dissolve
